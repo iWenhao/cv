@@ -35,7 +35,10 @@
     position: fixed; top: 12px; left: calc(50% + 411px); z-index: 10;
     font-size: 12px; padding: 5px 13px; border-radius: 20px;
     background: #6c5ce7; color: #fff; text-decoration: none;
+    transition: background .15s ease;
   }
+  .pdf-btn:hover { background: #5a4bd4; }
+  .pdf-btn:active { background: #4a3cbf; }
   @media screen and (max-width: 980px) {
     .pdf-btn { top: auto; left: auto; right: 14px; bottom: 16px; }
   }
@@ -242,7 +245,7 @@
   </div>
 </div>
 
-<a class="pdf-btn" href="aid-cv.pdf" download="aid-cv.pdf">下载 PDF</a>
+<a class="pdf-btn" href="aid-cv.pdf" download="aid-cv.pdf" target="_blank">下载 PDF</a>
 <script>
   (function () {
     var el = document.getElementById('mail');
