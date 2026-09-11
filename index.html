@@ -28,6 +28,13 @@
   .name-block .target .en { margin-left: 10px; font-size: 12px; font-weight: 500; color: #9a9aa4; letter-spacing: 1px; }
   .contacts { text-align: right; font-size: 12px; color: #55555f; line-height: 1.65; }
   .contacts b { color: #1a1a22; font-weight: 600; }
+  .contacts .mail { color: inherit; text-decoration: none; border-bottom: 1px dotted #c9c2f5; }
+  .pdf-btn {
+    position: fixed; top: 12px; right: 14px; z-index: 10;
+    font-size: 12px; padding: 5px 13px; border-radius: 20px;
+    background: #6c5ce7; color: #fff; text-decoration: none;
+  }
+  @media print { .pdf-btn { display: none; } }
   .header-rule {
     margin-top: 8px; height: 3px;
     background: linear-gradient(90deg, #6c5ce7 0 120px, #dcd6ff 120px 100%);
@@ -86,7 +93,7 @@
       <div class="target" data-page-node-id="mkZD6r5SRl1FL3vAIZAQC8">前端开发工程师<span class="en">Frontend Developer</span></div>
     </div>
     <div class="contacts" data-page-node-id="HRwtq53N4xKHM2AJExbWco">
-      <div data-page-node-id="ZpEDdzQ10RSKpWv42Gk3mu"><b data-page-node-id="fzaP64p5XCZOCava3Ok54f">邮箱</b>：ssmanhook@gmail.com</div>
+      <div data-page-node-id="ZpEDdzQ10RSKpWv42Gk3mu"><b data-page-node-id="fzaP64p5XCZOCava3Ok54f">邮箱</b>：<a id="mail" class="mail" data-a="ssmanhook" data-b="gmail" data-c="com" href="#">ssmanhook [at] gmail.com</a></div>
       <div><b>现居</b>：西安 · UTC+8</div>
     </div>
   </div>
@@ -229,6 +236,17 @@
     <span>Aiden Wu · 前端开发工程师 · 第 2 页 / 共 2 页</span>
   </div>
 </div>
+
+<a class="pdf-btn" href="resume.pdf" download>下载 PDF</a>
+<script>
+  (function () {
+    var el = document.getElementById('mail');
+    if (!el) return;
+    var addr = el.getAttribute('data-a') + '@' + el.getAttribute('data-b') + '.' + el.getAttribute('data-c');
+    el.textContent = addr;
+    el.href = 'mailto:' + addr;
+  })();
+</script>
 
 </body>
 </html>
